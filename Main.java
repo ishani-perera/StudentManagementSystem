@@ -8,6 +8,7 @@ public class Main {
         manager.loadFromFile("students.txt"); // Load previous data if exists
 
         while (true) {
+            // Display main menu
             System.out.println("\n--- Student Management System ---");
             System.out.println("1. Add Student");
             System.out.println("2. View Students");
