@@ -89,14 +89,17 @@ public class StudentManager {
         }
     }
 
-    // Load from file
+    // ---------------------------
+    // Load Data from File
+    // ---------------------------
+    // Reads student data from a file and recreates Student objects
     public void loadFromFile(String filename) {
-        students.clear();
+        students.clear(); // Clear existing data before loading
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length == 3) {
+                if (parts.length == 3) { // Ensure correct format
                     String id = parts[0];
                     String name = parts[1];
                     double marks = Double.parseDouble(parts[2]);
@@ -109,16 +112,22 @@ public class StudentManager {
         }
     }
 
-    // Input validation helpers
+    // ---------------------------
+    // Input Validation Helpers
+    // ---------------------------
+
+    // Validate Student ID (numbers only)
     public static boolean isValidId(String id) {
-        return id.matches("\\d+"); // Only numbers
+        return id.matches("\\d+");
     }
 
+    // Validate Name (letters and spaces only)
     public static boolean isValidName(String name) {
-        return name.matches("[a-zA-Z ]+"); // Only letters and spaces
+        return name.matches("[a-zA-Z ]+");
     }
 
+    // Validate Marks (integer or decimal)
     public static boolean isValidMarks(String marks) {
-        return marks.matches("\\d+(\\.\\d+)?"); // Only numbers, can be decimal
+        return marks.matches("\\d+(\\.\\d+)?");
     }
-}
+}   
