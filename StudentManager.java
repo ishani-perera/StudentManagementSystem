@@ -1,15 +1,26 @@
 // StudentManager.java
+// This class manages all student-related operations such as
+// adding, searching, deleting, saving, and loading students.
+
 import java.io.*;
 import java.util.ArrayList;
 
+
 public class StudentManager {
+    // ArrayList to store Student objects
     private ArrayList<Student> students;
 
+
+    // Constructor
+    // Initializes the student list when StudentManager object is created
     public StudentManager() {
         students = new ArrayList<>();
     }
 
-    // Add student
+    // ---------------------------
+    // Add Student
+    // ---------------------------
+    // Adds a new student to the list
     public void addStudent(Student student) {
         students.add(student);
         System.out.println("Student added successfully!");
