@@ -73,7 +73,10 @@ public class StudentManager {
     }
 
 
-    // Save to file
+    // ---------------------------
+    // Save Data to File
+    // ---------------------------
+    // Saves student data in CSV format (id,name,marks)
     public void saveToFile(String filename) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
             for (Student s : students) {
