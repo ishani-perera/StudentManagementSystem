@@ -1,4 +1,7 @@
 // Main.java
+// This is the driver class for the Student Management System
+// It handles user input, menu, and connects the StudentManager and Student classes
+
 import java.util.Scanner;
 
 public class Main {
