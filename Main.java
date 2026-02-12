@@ -26,8 +26,12 @@ public class Main {
 
             switch (choice) {
                 case "1":
+                    // -------------------------------
+                    // ADD STUDENT
+                    // -------------------------------
                     String id;
                     while (true) {
+                        // Validate Student ID: must be numbers only
                         System.out.print("Enter Student ID (numbers only): ");
                         id = sc.nextLine();
                         if (StudentManager.isValidId(id)) break;
