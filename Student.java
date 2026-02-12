@@ -1,12 +1,21 @@
 // Student.java
+// This class represents a Student entity in the system.
+// It contains student details and logic for calculating average and grade.
+
 public class Student {
+    // Private variables (Encapsulation)
+    // These fields store student information
     private String studentId;
     private String name;
-    private double marks;
+    Private double marks;
     private double average;
     private String grade;
 
+
     // Constructor
+    // Initializes student object with ID, name, and marks
+    // Automatically calculates average and grade when object is created
+
     public Student(String studentId, String name, double marks) {
         this.studentId = studentId;
         this.name = name;
