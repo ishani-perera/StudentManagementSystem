@@ -49,11 +49,19 @@ public class Student {
         return grade;
     }
 
-    // Setters
+    // ---------------------------
+    // Setter Methods
+    // Used to modify student details
+    // ---------------------------
+
+
+    // Update student name
     public void setName(String name) {
         this.name = name;
     }
 
+    // Update student marks
+    // Recalculate average and grade after updating marks
     public void setMarks(double marks) {
         this.marks = marks;
         calculateAverage();
@@ -65,7 +73,13 @@ public class Student {
         this.average = marks; // For now, single subject
     }
 
-    // Calculate grade
+    // Calculate grade based on average
+    // Grade criteria:
+    // 75+  = A
+    // 65-74 = B
+    // 55-64 = C
+    // 40-54 = D
+    // Below 40 = F
     private void calculateGrade() {
         if (average >= 75) grade = "A";
         else if (average >= 65) grade = "B";
