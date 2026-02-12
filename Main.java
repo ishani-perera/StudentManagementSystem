@@ -39,6 +39,7 @@ public class Main {
                     }
 
                     String name;
+                    // Validate Name: letters only
                     while (true) {
                         System.out.print("Enter Name (letters only): ");
                         name = sc.nextLine();
@@ -48,6 +49,7 @@ public class Main {
 
                     String marksStr;
                     double marks;
+                    // Validate Marks: must be a number between 0-100
                     while (true) {
                         System.out.print("Enter Marks (numbers only): ");
                         marksStr = sc.nextLine();
@@ -58,39 +60,61 @@ public class Main {
                         System.out.println("Invalid Marks! Numbers only.");
                     }
 
+                    // Create a new Student object and add it to manager
                     manager.addStudent(new Student(id, name, marks));
                     break;
 
                 case "2":
+                    // -------------------------------
+                    // VIEW ALL STUDENTS
+                    // -------------------------------
                     manager.displayStudents();
                     break;
 
                 case "3":
+                     // -------------------------------
+                    // SEARCH STUDENT BY ID
+                    // -------------------------------
                     System.out.print("Enter Student ID to search: ");
                     String searchId = sc.nextLine();
                     manager.searchStudent(searchId);
                     break;
 
                 case "4":
+                    // -------------------------------
+                    // DELETE STUDENT BY ID
+                    // -------------------------------
                     System.out.print("Enter Student ID to delete: ");
                     String delId = sc.nextLine();
                     manager.deleteStudent(delId);
                     break;
 
                 case "5":
+                    // -------------------------------
+                    // SAVE STUDENT DATA TO FILE
+                    // -------------------------------
                     manager.saveToFile("students.txt");
                     break;
 
                 case "6":
+                    // -------------------------------
+                    // LOAD STUDENT DATA FROM FILE
+                    // -------------------------------
                     manager.loadFromFile("students.txt");
                     break;
 
                 case "7":
+                    // -------------------------------
+                    // EXIT PROGRAM
+                    // -------------------------------
                     System.out.println("Exiting...");
                     sc.close();
                     System.exit(0);
 
                 default:
+                    // -------------------------------
+                    // INVALID CHOICE
+                    // -------------------------------
                     System.out.println("Invalid choice! Try again.");
             }
         }
