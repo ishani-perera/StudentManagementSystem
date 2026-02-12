@@ -26,18 +26,24 @@ public class StudentManager {
         System.out.println("Student added successfully!");
     }
 
-    // Display all students
+    // ---------------------------
+    // Display All Students
+    // ---------------------------
+    // Displays all students in the system
     public void displayStudents() {
         if (students.isEmpty()) {
             System.out.println("No students found.");
         } else {
             for (Student s : students) {
-                System.out.println(s);
+                System.out.println(s); // Calls Student.toString() method
             }
         }
     }
 
-    // Search student by ID
+    // ---------------------------
+    // Search Student by ID
+    // ---------------------------
+    // Searches for a student using their ID
     public void searchStudent(String id) {
         for (Student s : students) {
             if (s.getStudentId().equals(id)) {
@@ -48,17 +54,24 @@ public class StudentManager {
         System.out.println("Student not found.");
     }
 
-    // Delete student by ID
+    // ---------------------------
+    // Delete Student by ID
+    // ---------------------------
+    // Removes a student safely using Iterator to avoid ConcurrentModificationException
     public void deleteStudent(String id) {
-        for (Student s : students) {
+        Iterator<Student> iterator = students.iterator();
+
+        while (iterator.hasNext()) {
+            Student s = iterator.next();
             if (s.getStudentId().equals(id)) {
-                students.remove(s);
+                iterator.remove(); // Safe removal
                 System.out.println("Student deleted successfully!");
                 return;
             }
         }
         System.out.println("Student not found.");
     }
+
 
     // Save to file
     public void saveToFile(String filename) {
