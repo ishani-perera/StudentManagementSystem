@@ -17,14 +17,18 @@ public class Student {
     // Automatically calculates average and grade when object is created
 
     public Student(String studentId, String name, double marks) {
-        this.studentId = studentId;
-        this.name = name;
-        this.marks = marks;
+        this.studentId=studentID;
+        this.name=name;
+        this.marks=marks;
+        // Calculate derived values
         calculateAverage();
         calculateGrade();
     }
 
-    // Getters
+    // ---------------------------
+    // Getter Methods
+    // Used to access private variables
+    // ---------------------------
     public String getStudentId() {
         return studentId;
     }
