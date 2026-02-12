@@ -81,11 +81,16 @@ public class Student {
     // 40-54 = D
     // Below 40 = F
     private void calculateGrade() {
-        if (average >= 75) grade = "A";
-        else if (average >= 65) grade = "B";
-        else if (average >= 55) grade = "C";
-        else if (average >= 40) grade = "D";
-        else grade = "F";
+        if (average >= 75) 
+            grade = "A";
+        else if (average >= 65) 
+            grade = "B";
+        else if (average >= 55) 
+            grade = "C";
+        else if (average >= 40) 
+            grade = "D";
+        else 
+            grade = "F";
     }
 
     @Override
