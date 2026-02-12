@@ -93,6 +93,8 @@ public class Student {
             grade = "F";
     }
 
+    // Override toString method
+    // This method defines how the object is printed
     @Override
     public String toString() {
         return "ID: " + studentId +
